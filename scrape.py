@@ -5,6 +5,15 @@ from sqlite3 import connect
 import itertools
 import numpy as np
 
+groups = {
+    'A': ['Qatar', 'Ecuador', 'Senegal', 'Netherlands'],
+    'B': ['England', 'Iran', 'USA', 'Wales'],
+    'C': ['Argentina', 'Saudi Arabia', 'Mexico', 'Poland'],
+    'D': ['France', 'Australia', 'Denmark', 'Tunisia'],
+    'E': ['Germany', 'Japan', 'Costa Rica', 'Spain'],
+    'F': ['Belgium', 'Canada', 'Morocco', '']
+}
+
 def get_redirect_url(url, year):
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')
@@ -85,6 +94,8 @@ def scrape():
     # print(df.head())
     df.to_csv('match_players.csv', index=False)
 
+def scrape_fifa_team_rankings():
+    URL = 'https://sofifa.com/team/'
 
 if __name__ == '__main__':
     scrape()
