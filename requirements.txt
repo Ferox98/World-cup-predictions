@@ -6,14 +6,9 @@ scikit_learn
 imblearn
 boruta
 xgboost
-pytorch 
-torchvision
-torchaudio
-pytorch-cuda
 joblib
-pickle
+pickle5
 matplotlib
 ray
 latextable
-functools
 
