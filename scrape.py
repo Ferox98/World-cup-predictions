@@ -53,7 +53,6 @@ def init():
             id_to_string[cur_id] = team
             cur_id += 1
     return team_id, id_to_string
-210040
 
 def scrape_world_cup_team_rosters():
     global team_urls
@@ -99,9 +98,7 @@ def get_player_stats():
                 else:
                     player_stats.append(None)
         rows.append(player_stats)
-        # break
-    # print(stats)
-    # print(rows[0])
+
     df = pd.DataFrame(rows, columns=stats)
     df.to_csv('wc_player_stats.csv', index=False)
 
@@ -143,7 +140,5 @@ def get_roster(url):
 #     df['group_id'] = df.apply(lambda x: math.ceil((int(x.loc['CountryID']) + 1) / 4), axis=1)
 #     df.to_csv('wc_team_rosters.csv')
 if __name__ == '__main__':
-    # scrape_world_cup_team_rosters()
+    scrape_world_cup_team_rosters()
     get_player_stats()
-    # get_roster('https://sofifa.com//team/1', 2008)
-    # modify()
